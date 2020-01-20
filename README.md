@@ -1,4 +1,4 @@
-# Swipe Cards In Flutter
+# Swipe Cards In Flutter    
 
 This project implements the card swipping Feature like Tinder in flutter. I have shown different Hill Stations details with this nice looking Ui. We can get details of any place on tapping the card which takes us to next page.
 
