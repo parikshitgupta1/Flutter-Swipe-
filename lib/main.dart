@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'PlanetCard.dart';
-import 'CardDetails.dart';
+import 'package:tinder_swipe_cards/CardDetails.dart';
+import 'package:tinder_swipe_cards/PlanetCard.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,14 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: <String, WidgetBuilder>{
-          '/cardDetails': (BuildContext context) {
-            // return new CardDetails();
-          }
-        },
-        home: HomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
 
@@ -30,9 +23,9 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  List<Widget> cardList = new List();
+  List<Widget> cardList = [];
 
-  void removeCards(index) {
+  void removeCards(int index) {
     setState(() {
       cardList.removeAt(index);
     });
@@ -50,7 +43,7 @@ class HomePageState extends State<HomePage> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tinder App"),
+        title: const Text("Tinder App"),
         backgroundColor: Colors.purple,
       ),
       body: Stack(alignment: Alignment.center, children: cardList),
@@ -58,7 +51,7 @@ class HomePageState extends State<HomePage> {
   }
 
   List<Widget> _generateCards() {
-    List<PlanetCard> planetCard = new List();
+    final List<PlanetCard> planetCard = [];
     planetCard.add(
       PlanetCard(
           "Mussorie",
@@ -85,7 +78,7 @@ class HomePageState extends State<HomePage> {
           "http://amazingindiablog.in/wp-content/uploads/2015/06/P5035083.jpg",
           110.0),
     );
-    List<Widget> cardList = new List();
+    final List<Widget> cardList = [];
 
     for (int x = 0; x < 5; x++) {
       cardList.add(
@@ -97,9 +90,7 @@ class HomePageState extends State<HomePage> {
               },
               childWhenDragging: Container(),
               feedback: GestureDetector(
-                onTap: () {
-                  print("Hello All");
-                },
+                onTap: () {},
                 child: Card(
                   elevation: 8.0,
                   shape: RoundedRectangleBorder(
@@ -118,7 +109,7 @@ class HomePageState extends State<HomePage> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                        padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                         child: Text(
                           planetCard[x].cardTitle,
                           style: TextStyle(
@@ -148,7 +139,7 @@ class HomePageState extends State<HomePage> {
                       children: <Widget>[
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(20.0),
                                 topRight: Radius.circular(20.0)),
                             image: DecorationImage(
@@ -159,7 +150,8 @@ class HomePageState extends State<HomePage> {
                           width: 320.0,
                         ),
                         Container(
-                          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          padding:
+                              const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Text(
                             planetCard[x].cardTitle,
                             style: TextStyle(
