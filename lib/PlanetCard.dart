@@ -1,11 +1,7 @@
 class PlanetCard {
-  String cardTitle;
-  String cardImage;
-  double topMargin;
+  final String cardTitle;
+  final String cardImage;
+  final double topMargin;
 
-  PlanetCard(String title, String imagePath, double marginTop) {
-    cardTitle = title;
-    cardImage = imagePath;
-    topMargin = marginTop;
-  }
+  PlanetCard(this.cardTitle, this.cardImage, this.topMargin);
 }
